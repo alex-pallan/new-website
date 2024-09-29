@@ -1,0 +1,259 @@
+$body-bg-dark: #120f0e;
+
+@import "bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+h1 {
+  @extend .montserrat-extrabold;
+}
+
+h2 {
+  @extend .montserrat-extrabold;
+}
+
+h3 {
+  @extend .montserrat-extrabold;
+}
+
+h4 {
+  @extend .montserrat-extrabold;
+}
+
+h5 {
+  @extend .montserrat-extrabold;
+}
+
+.page-title {
+  padding-left: 1rem;
+  border-left: 5px solid #f1be48;
+  box-shadow: inset 20px 0px 20px -20px #f1be48;
+  background: #00000055;
+}
+
+.card {
+  border-radius: 0;
+  background: #00000055;
+  border-color: #f1be48;
+  box-shadow: 0 0 6px #f1be4855;
+}
+
+.tagholder {
+  width: fit-content;
+  border: 1px solid #f1be48;
+  background: #00000055;
+}
+
+.badge-green {
+  border-radius: 0;
+  border: 1px solid green;
+  color: lighten(green, 50%);
+}
+
+.badge-red {
+  border-radius: 0;
+  border: 1px solid red;
+  color: lighten(red, 50%);
+}
+
+.badge-grey {
+  border-radius: 0;
+  border: 1px solid grey;
+  color: lighten(grey, 50%);
+}
+
+hr {
+  color: #f1be48;
+  box-shadow: 0 0 10px #f1be48;
+}
+
+.box {
+  position: absolute;
+  top: -5px; /* Move it slightly above the navbar */
+  left: -5px; /* Move it slightly to the left of the navbar */
+  width: calc(100% + 10px); /* Make it slightly larger than the navbar */
+  height: calc(100% + 10px); /* Make it slightly taller than the navbar */
+  z-index: -1; /* Ensure it's behind the navbar */
+  --mask: linear-gradient(
+      45deg,
+      #0000 9.9px,
+      #000 0 calc(9.9px + 1px),
+      #0000 0 calc(100% - 9.9px - 1px),
+      #000 0 calc(100% - 9.9px),
+      #0000 0
+    ),
+    linear-gradient(
+      -45deg,
+      #0000 9.9px,
+      #000 0 calc(9.9px + 1px),
+      #0000 0 calc(100% - 9.9px - 1px),
+      #000 0 calc(100% - 9.9px),
+      #0000 0
+    ),
+    linear-gradient(90deg, #000 2px, #0000 0) -1px 50%/100% calc(100% - 28px) repeat-x,
+    linear-gradient(#000 2px, #0000 0) 50% -1px / calc(100% - 28px) 100% repeat-y;
+}
+.box:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f1be48;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+.navbar {
+  border: 1px solid #f1be48;
+  position: fixed; /* Ensure it stays fixed at the top */
+  top: 0; /* Explicitly define the top position */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  z-index: 1; /* Place it above the box */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 6px #f1be4855;
+  background: #00000055;
+}
+
+.navbar-brand {
+  @extend .montserrat-extrabold;
+  transform: scale(1.3) translateX(13%);
+  color: #f1be48;
+  transition: 0.1s;
+  :hover {
+    color: #fff;
+  }
+}
+
+.navbar-nav {
+  @extend .montserrat-regular;
+}
+
+.nav-underline .nav-link.active,
+.nav-underline .show > .nav-link {
+  box-shadow: inset 0 -10px 10px -12px #fff;
+}
+
+.montserrat-thin {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.montserrat-thin-italic {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.montserrat-extralight {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.montserrat-extralight-italic {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.montserrat-light {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.montserrat-light-italic {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.montserrat-regular {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-regular-italic {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.montserrat-medium {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.montserrat-medium-italic {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.montserrat-semibold {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.montserrat-semibold-italic {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.montserrat-bold {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.montserrat-bold-italic {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.montserrat-extrabold {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.montserrat-extrabold-italic {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.montserrat-black {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.montserrat-black-italic {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: italic;
+}

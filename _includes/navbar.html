@@ -1,0 +1,33 @@
+<nav class="navbar m-3 fixed-top navbar-expand-lg">
+    <div class="box"></div>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ site.url }}">{{ site.title }}</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav nav-underline ms-auto">
+          {% for item in site.sitemap %}
+            <li class="nav-item">
+              <a
+                class="nav-link {% if page.url == item.url %}active{% endif %}"
+                href="{{ item.url }}"
+                {% if page.url == item.url %}aria-current="page"{% endif %}
+              >
+                {{ item.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  

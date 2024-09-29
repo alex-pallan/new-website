@@ -1,0 +1,45 @@
+{% for post in site.posts %}
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img
+        src="{{ post.cover-image }}"
+        class="img-fluid"
+        alt="{{ post.title }}"
+      />
+    </div>
+    <div class="col-md-8 d-flex flex-column">
+      <div class="card-body flex-grow-1">
+        <h3 class="card-title">{{ post.title }}</h3>
+        <p class="card-text">
+          {{ post.short-description | default: "No description available" }}
+        </p>
+        <div class="tagholder px-2 pt-1 pb-2">
+          <span class="badge badge-green"
+            ><i class="bi bi-globe-americas"></i> Sustainability</span
+          >
+          <span class="badge badge-green"
+            ><i class="bi bi-recycle"></i> Recycling</span
+          >
+          <span class="badge badge-red"
+            ><i class="bi bi-mortarboard-fill"></i> Iowa State University</span
+          >
+          <span class="badge badge-grey"
+            ><i class="bi bi-people-fill"></i> Community</span
+          >
+        </div>
+      </div>
+      <div class="card-footer mt-auto">
+        <p class="card-text text-secondary montserrat-semibold">
+          {% assign d = post.date | date: "%-d" %} {{ post.date | date: "%B" }}
+          {% case d %} {% when "1", "21", "31" %}{{ d }}st {% when "2", "22"
+          %}{{ d }}nd {% when "3", "23" %}{{ d }}rd {% else %}{{ d }}th{%
+          endcase %}, {{ post.date | date: "%Y" }}
+        </p>
+        <a href="{{ post.url }}" class="stretched-link"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endfor %}

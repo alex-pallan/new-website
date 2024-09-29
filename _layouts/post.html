@@ -1,0 +1,28 @@
+---
+layout: skeleton
+---
+
+<p style="margin-bottom: 0" class="montserrat-regular-italic text-secondary">
+  {{ page.type }}
+</p>
+<h1>{{ page.title }}</h1>
+<p class="fs-4 montserrat-semibold">
+  {% assign d = page.date | date: "%-d" %} {{ page.date | date: "%B" }} {% case
+  d %}{% when "1" or "21" or "31" %}{{ d }}st{% when "2" or "22" %}{{ d }}nd{%
+  when "3" or "23" %}{{ d }}rd{% else %}{{ d }}th{% endcase %}, {{ page.date |
+  date: "%Y" }}
+</p>
+<div class="tagholder px-2 pt-1 pb-2">
+  <span class="badge badge-green"
+    ><i class="bi bi-globe-americas"></i> Sustainability</span
+  >
+  <span class="badge badge-green"><i class="bi bi-recycle"></i> Recycling</span>
+  <span class="badge badge-red"
+    ><i class="bi bi-mortarboard-fill"></i> Iowa State University</span
+  >
+  <span class="badge badge-grey"
+    ><i class="bi bi-people-fill"></i> Community</span
+  >
+</div>
+<hr />
+<div class="container" style="max-width: 750px">{{ content }}</div>
